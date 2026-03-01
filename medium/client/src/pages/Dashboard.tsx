@@ -9,7 +9,7 @@ export default function Dashboard() {
 
   const fetchPosts = async () => {
     const res = await axios.get<Post[]>(
-      "http://localhost:3000/api/v1/blog/bulk/all"
+      `${import.meta.env.VITE_API_URL}/api/v1/blog/bulk/all`
     );
     setPosts(res.data);
   };

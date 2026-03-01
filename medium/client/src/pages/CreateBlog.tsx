@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+
 export default function CreateBlog() {
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string>("");
@@ -12,7 +13,7 @@ export default function CreateBlog() {
   const handleSubmit = async () => {
     try {
       await axios.post(
-        "http://localhost:3000/api/v1/blog",
+        `${import.meta.env.VITE_API_URL}/api/v1/blog`,
         { title, content },
         {
           headers: {

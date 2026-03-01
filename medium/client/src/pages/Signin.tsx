@@ -12,7 +12,7 @@ export default function Signin() {
   const handleSubmit = async () => {
     try {
       const res = await axios.post<AuthResponse>(
-        "http://localhost:3000/api/v1/user/signin",
+        `${import.meta.env.VITE_API_URL}/api/v1/user/signin`,
         { email, password }
       );
 

@@ -15,7 +15,7 @@ const Signup = () => {
   const handleSubmit = async () => {
     try {
       const res = await axios.post<AuthResponse>(
-        "http://localhost:3000/api/v1/user/signup",
+        `${import.meta.env.VITE_API_URL}/api/v1/user/signup`,
         { username, email, password }
       );
 
