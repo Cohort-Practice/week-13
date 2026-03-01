@@ -1,17 +1,26 @@
 {
   "name": "server",
+  "module": "index.ts",
   "type": "module",
+  "private": true,
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
-  },
-  "dependencies": {
-    "@prisma/extension-accelerate": "^3.0.1",
-    "hono": "^4.11.4",
-    "prisma": "^7.2.0"
+    "start": "bun index.ts",
+    "dev": "nodemon"
   },
   "devDependencies": {
-    "wrangler": "^4.4.0"
+    "@types/bcryptjs": "^3.0.0",
+    "@types/bun": "latest",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/pg": "^8.16.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.2.4",
+    "hono": "^4.11.8",
+    "jsonwebtoken": "^9.0.3",
+    "pg": "^8.18.0"
   }
 }
